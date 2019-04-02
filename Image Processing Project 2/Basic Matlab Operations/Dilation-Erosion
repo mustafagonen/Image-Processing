@@ -1,0 +1,69 @@
+Erosion code
+
+A=imread('mustafa.png')
+A=im2bw(A);
+%Structuring element
+B=[1 1 0];
+%Pad array with ones on both sides
+C=padarray(A,[0 1],1);
+%Initialize the matrix D of size A with zeros
+D=false(size(A));
+
+for i=1:size(C,1)
+      for j=1:size(C,2)-2
+	L=C(i,j:+2);
+	K=find(B==1);
+	If(L(K)==1)
+	D(i,j)=1;
+	end
+end
+end
+figure,imshow(D);
+
+
+Erosion code
+
+a=imread('C:\Users\GÖNEN\Desktop\bb.jpg');
+figure, imshow(a), title ('Original İmage')
+a=255-a;
+figure, imshow(a), title ('Original İmage')
+se=strel('disk',7);
+a_erode=imerode(a,se);
+a_erode=255-a_erode;
+figure, imshow(a_erode), title('Erosion Image')
+
+
+
+
+
+
+
+Dilation code
+
+A=imread( 'mustafa.png' );
+A=im2bw(A);
+%Structuring element
+B=[1 1 1 1 1 1 1;];
+C=padarray(A,[0 3]);
+D=false(size(A));
+for i=1:size(C,1)
+    for j=1:size(C,2)-6
+        D(i,j)=sum(B&C(i,j:j+6));
+    end
+end
+
+figure,imshow(D);
+
+
+Dilation code
+a=imread('C:\Users\GÖNEN\Desktop\bb.jpg');
+figure, imshow(a), title ('Original İmage')
+a=255-a;
+figure, imshow(a), title ('Original İmage')
+se=strel('disk',7);
+a_erode=imdilate(a,se);
+a_erode=255-a_erode;
+figure, imshow(a_erode), title('Dilation Image')
+
+
+
