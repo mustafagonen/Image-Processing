@@ -1,0 +1,15 @@
+image=imread('/home/bs04/e2264547/Desktop/image.jpeg');
+image=rgb2gray(image);
+for j=1:4
+saltpepper4images{j}=imnoise(image,'gaussian',rand/10);
+end
+averageOf4=zeros(744,744);
+for x=1:744
+for y=1:744
+sum=0;
+for i=1:4
+sum=sum+gaussian4images{j}(x,y);
+end
+averageOf4(x,y)=sum/4;
+end
+end

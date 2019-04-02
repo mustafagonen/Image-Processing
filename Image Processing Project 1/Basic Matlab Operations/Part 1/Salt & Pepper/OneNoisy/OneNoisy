@@ -1,0 +1,3 @@
+image=imread('/home/bs04/e2264547/Desktop/image.jpeg');
+image=rgb2gray(image);
+OneNoisy=imnoise(image,'salt & pepper',rand/10);

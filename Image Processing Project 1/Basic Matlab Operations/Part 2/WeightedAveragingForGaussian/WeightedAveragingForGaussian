@@ -1,0 +1,6 @@
+image=imread('/home/bs04/e2264547/Desktop/image.jpeg');
+image=rgb2gray(image);
+noisy=imnoise(image,'gaussian',0,0.04);
+f=1/16*[1,2,1:2,4,2:1,2,1];
+denoisy=filter2(f,noisy);
+imshow(uint8(denoisy));

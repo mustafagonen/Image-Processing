@@ -1,0 +1,6 @@
+image=imread('/home/bs04/e2264547/Desktop/image.jpeg');
+image=rgb2gray(image);
+noisy=imnoise(image,'salt & pepper',0.02);
+f=1/9*[1,1,1:1,1,1:1,1,1];
+denoisy=filter2(f,noisy);
+imshow(uint8(denoisy));
